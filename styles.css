@@ -85,50 +85,23 @@ nav {
     51%, 100% { opacity: 0; }
 }
 
-/* Trailing Mouse Thing */
-
-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-path {
-    fill: none;
-    stroke-width: 20;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.trail-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.trail {
-    fill: none;
-    stroke-width: 20;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-opacity: 0.8;
-
-    /* Flowing stroke illusion */
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 0;
-}
+/* bubbles */
 
 .bubble {
   position: absolute;
-  width: 0.75rem;
-  height: 0.75rem;
-  background: #CFE3EC;
   border-radius: 50%;
   pointer-events: none;
+  z-index: 9999;
+}
+
+/* EXPERIENCE */
+
+.experience {
+    margin: 0 1.5rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 100px;
 }
