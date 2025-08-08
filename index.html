@@ -23,10 +23,31 @@
                 </ul>
             </nav>
         </div>
-        <hero>
+        <div class="hero">
+            <svg class="trail-canvas">
+                <defs>
+                    <linearGradient id="surfGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#2578A3" />
+                        <stop offset="40%" stop-color="#64A6C7" />
+                        <stop offset="80%" stop-color="#AFD3E4" />
+                    </linearGradient>
+                </defs>
+
+                <path d="" class="trail" stroke="url(#surfGradient)" />
+                <path d="" class="trail" stroke="url(#surfGradient)" />
+                <path d="" class="trail" stroke="url(#surfGradient)" />
+                <path d="" class="trail" stroke="url(#surfGradient)" />
+                <path d="" class="trail" stroke="url(#surfGradient)" />
+                <path d="" class="trail" stroke="url(#surfGradient)" />
+                <path d="" class="trail" stroke="url(#surfGradient)" />
+            </svg>
             <img src="assets/shelby_surf.JPG" alt="Girl on a surfboard" class="surf-pic">
             <p id="typewriter"><span id="text"></span><span class="cursor">_</span></p>
-        </hero>
-    <script src="script.js"></script>
+        </div>
+        <div class="experience">
+            <h2>experience</h2>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
