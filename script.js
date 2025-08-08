@@ -63,17 +63,17 @@ const bubbleColors = [
 ];
 
 setInterval(() => {
-    const x = Math.random() * window.innerWidth;
-    const y = window.innerHeight - 20;
+    const x = Math.random() * window.innerWidth + window.scrollX;
+    const y = window.innerHeight + window.scrollY - 20;
     spawnBubble(x, y);
-}, 600);
+}, 300);
 
 window.addEventListener("mousemove", (event) => {
     const count = Math.floor(Math.random() * 2) + 1;
     for (let i = 0; i < count; i++) {
         const offsetX = (Math.random() - 0.5) * 30;
         const offsetY = (Math.random() - 0.5) * 20;
-        spawnBubble(event.clientX + offsetX, event.clientY + offsetY);
+        spawnBubble(event.pageX + offsetX, event.pageY + offsetY);
     }
 });
 
