@@ -107,3 +107,20 @@ function spawnBubble(x, y) {
         onComplete: () => bubble.remove()
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const headers = document.querySelectorAll('.exp-header');
+    
+    headers.forEach(header => {
+        header.addEventListener('click', function() {
+            this.classList.toggle('active');
+            
+            const details = this.nextElementSibling;
+            if (details.style.display === "block") {
+                details.style.display = "none";
+            } else {
+                details.style.display = "block";
+            }
+        });
+    });
+});
