@@ -9,10 +9,9 @@ let isEnd = false;
 
 const jobs = [
     'software engineer',
-    'ux fanatic',
+    'ux enthusiast',
     'data-driven decision maker',
     'product-focused engineer',
-    'ocean enthusiast'
 ];
 
 function doTypewriter() {
@@ -109,3 +108,41 @@ function spawnBubble(x, y) {
         onComplete: () => bubble.remove()
     });
 }
+
+const timeline = document.querySelector('.timeline');
+const boxes = Array.from(document.querySelectorAll('.timeline .text-box'));
+
+function clamp(n, min, max) { return Math.max(min, Math.min(n, max)); }
+
+function updateLineProgress() {
+  if (!timeline) return;
+
+  const rect = timeline.getBoundingClientRect();
+  const vh = window.innerHeight || document.documentElement.clientHeight;
+
+  const extraAfter = 150;
+  const progress = clamp((vh - rect.top) / (rect.height + extraAfter), 0, 1);
+
+  timeline.style.setProperty('--line-progress', `${progress * 100}%`);
+
+  const lineBottomWithinTimeline = progress * rect.height;
+
+  const hysteresis = 24;
+
+  boxes.forEach((box) => {
+    const b = box.getBoundingClientRect();
+    const boxTopWithinTimeline = b.top - rect.top;
+
+    const triggerY = boxTopWithinTimeline + b.height * 0.5;
+
+    if (lineBottomWithinTimeline >= triggerY + hysteresis) {
+      box.classList.add('revealed');
+    } else if (lineBottomWithinTimeline <= triggerY - hysteresis) {
+      box.classList.remove('revealed');
+    }
+  });
+}
+
+updateLineProgress();
+window.addEventListener('scroll', updateLineProgress, { passive: true });
+window.addEventListener('resize', updateLineProgress);
