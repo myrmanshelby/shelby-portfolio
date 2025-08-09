@@ -163,3 +163,56 @@ window.addEventListener('resize', updateLineProgress);
 
   items.forEach((el) => io.observe(el));
 })();
+
+// SKILLS
+(() => {
+  const track = document.getElementById('skills-track');
+  if (!track) return;
+
+  const base = 'assets/skills/';
+  const files = [
+    'c.png',
+    'css.png',
+    'docker.png',
+    'figma.png',
+    'firebase.png',
+    'flask.png',
+    'git.png',
+    'github.png',
+    'html.png',
+    'influxdb.png',
+    'java.png',
+    'javascript.png',
+    'linux.png',
+    'node.png',
+    'postgres.png',
+    'python.png',
+    'react.png',
+    'sql.png',
+    'swift.png',
+    'typescript.png',
+    'ubuntu.png',
+    'vuejs.png',
+  ];
+
+  const makeSet = () => {
+    const frag = document.createDocumentFragment();
+    files.forEach(name => {
+      const chip = document.createElement('div');
+      chip.className = 'skill-chip';
+      const img = document.createElement('img');
+      img.src = base + name;
+      img.alt = name.replace('.png','');
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.width = 64;
+      img.height = 64;
+      chip.appendChild(img);
+      frag.appendChild(chip);
+    });
+    return frag;
+  };
+
+  track.appendChild(makeSet());
+  track.appendChild(makeSet());
+})();
