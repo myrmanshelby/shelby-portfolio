@@ -146,3 +146,20 @@ function updateLineProgress() {
 updateLineProgress();
 window.addEventListener('scroll', updateLineProgress, { passive: true });
 window.addEventListener('resize', updateLineProgress);
+
+// Scroll-reveal for projects
+(() => {
+  const items = document.querySelectorAll('#projects .reveal');
+  if (!items.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  items.forEach((el) => io.observe(el));
+})();
