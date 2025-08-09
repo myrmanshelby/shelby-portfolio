@@ -54,12 +54,14 @@ doTypewriter();
 // Bubbles
 
 const bubbleColors = [
-    "#D9E8ED", // soft sea foam
-    "#A6CCE1", // aqua
-    "#FDE8D2", // sand
-    "#FAD6D6", // coral blush
-    "#FFF9E8", // shell
-    "#CFF5E7", // mint sea glass
+    "#4CC6BC", // sea foam
+    "#4490B9", // aqua
+    "#FFF3E5", // sand
+    "#F8CEEC", // coral blush
+    "#FDEDDA", // shell
+    "#CFECDB", // mint sea glass
+    "#94C1D6",
+    "#C6DDEB"
 ];
 
 setInterval(() => {
@@ -107,20 +109,3 @@ function spawnBubble(x, y) {
         onComplete: () => bubble.remove()
     });
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    const headers = document.querySelectorAll('.exp-header');
-    
-    headers.forEach(header => {
-        header.addEventListener('click', function() {
-            this.classList.toggle('active');
-            
-            const details = this.nextElementSibling;
-            if (details.style.display === "block") {
-                details.style.display = "none";
-            } else {
-                details.style.display = "block";
-            }
-        });
-    });
-});

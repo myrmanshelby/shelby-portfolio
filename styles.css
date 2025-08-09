@@ -183,7 +183,7 @@ h2 {
     position: absolute;
     width: 0.375rem;
     height: 100%;
-    background: linear-gradient(to bottom, #00bcd4, #4caf50);
+    background: linear-gradient(to bottom, #4490B9, #F8CEEC, #FDEDDA, #ECD0F6, #94C1D6);
     top: 0;
     left: 50%;
     margin-left: -0.1875rem;
@@ -211,14 +211,4 @@ h2 {
 
 .exp-header p {
     margin: 0;
-}
-
-.exp-details {
-    display: none;
-    padding-top: 1rem;
-    font-size: 0.875rem;
-}
-
-.exp-header.active + .exp-details {
-    display: block;
 }
