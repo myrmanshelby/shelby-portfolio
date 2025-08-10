@@ -570,12 +570,95 @@ nav {
   height: 1.5rem;
 }
 
-@media (max-width: 780rem) {
-  .social-buttons {
-    gap: 0.75rem;
-  }
-}
 @media (max-width: 780px) {
+    .nav-section {
+        margin: 1rem 1.25rem;
+        justify-content: center;
+    }
+    .nav-section h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .nav-section nav { 
+        display: none;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 0.5rem 0 1.5rem;
+    }
+    .surf-pic {
+        width: 100%;
+        max-width: 24rem;
+        margin: 0 auto 0.75rem;
+        height: auto;
+        display: block;
+    }
+    #typewriter {
+        margin: 0 1rem 2rem;
+    }
+    #typewriter span {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        margin: 0 1.25rem 3rem;
+        font-size: 1.5rem;
+    }
+    
+    .bar {
+        display: none;
+    }
+
+    .timeline {
+        max-width: 100%;
+        margin: 0 0 2rem;
+        padding-left: 3.5rem;
+    }
+
+    .timeline::after {
+        left: 1.25rem;
+        margin-left: 0;
+        width: 0.25rem;
+    }
+
+    .container {
+        width: 100%;
+        left: 0 !important;
+    }
+
+    .container img {
+        display: none;
+    }
+
+    .text-box {
+        margin: 0.5rem 2rem 1rem;
+        padding: 1rem 1rem;
+        font-size: 0.95rem;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .left-container .text-box,
+    .right-container .text-box {
+        text-align: left;
+        transform: translateX(0);
+    }
+
+    .left-container .text-box,
+    .right-container .text-box {
+        opacity: 0;
+        transform: translateY(0.75rem);
+        transition: transform 400ms ease, opacity 400ms ease;
+    }
+    .text-box.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .exp-header h3 {
+        font-size: 1.05rem;
+    }
+
     .projects-grid {
         padding: 0 1.5rem 2.5rem;
         grid-template-columns: 1fr;
@@ -591,4 +674,8 @@ nav {
    .about-container {
         margin: 0 5.56rem;
    }
+
+   .social-buttons {
+        gap: 0.75rem;
+    }
 }
